@@ -1,0 +1,386 @@
+/* ===================================================
+   ASVA Innovation Lab - Under Construction Stylesheet
+   Theme: Clean White Background with Blue Accents
+   =================================================== */
+
+/* 1. Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Smoothly scrolls to section when clicking navbar links */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Common container to center content with readable width */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Common section padding and anchor offset for fixed navbar */
+.section {
+  padding: 70px 20px;
+  scroll-margin-top: 70px; /* Prevents navbar from hiding section headers */
+}
+
+/* Small blue underline beneath section titles */
+.divider {
+  width: 60px;
+  height: 3px;
+  background-color: #0066cc;
+  margin: 12px auto 25px auto;
+  border-radius: 2px;
+}
+
+/* Section text styling */
+.section-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #555555;
+}
+
+
+/* ===================================================
+   2. Navigation Bar
+   =================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo and company name */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #111111;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0066cc; /* Brand blue */
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #0066cc; /* Turns blue on hover */
+}
+
+
+/* ===================================================
+   3. Home (Hero) Section
+   =================================================== */
+.home-section {
+  background-color: #f7faff; /* Very soft blue tint */
+  padding: 90px 20px 80px 20px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+/* Badge highlight above main heading (GIF-style animation) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e3effd;
+  color: #0066cc;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(0, 102, 204, 0.25);
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+/* Badge pulsing effect like an animated GIF */
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.25);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px 2px rgba(0, 102, 204, 0.25);
+  }
+}
+
+/* Continuously rotating gear icon */
+.badge-icon {
+  display: inline-block;
+  font-size: 1.05rem;
+  animation: spinGear 3s linear infinite;
+}
+
+@keyframes spinGear {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home-section h1 {
+  font-size: 2.4rem;
+  color: #111111;
+  margin-bottom: 18px;
+}
+
+.home-message {
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  font-size: 1.15rem;
+  color: #555555;
+}
+
+
+/* ===================================================
+   4. Buttons
+   =================================================== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #0066cc; /* Main blue accent */
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #004c99; /* Darker blue on hover */
+}
+
+
+/* ===================================================
+   5. About Section
+   =================================================== */
+.about-section {
+  background-color: #ffffff;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #111111;
+}
+
+
+/* ===================================================
+   6. Services Section
+   =================================================== */
+.services-section {
+  background-color: #fcfdfe;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  color: #111111;
+}
+
+/* 3-Column grid for the service cards */
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+/* Individual service card */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 30px 20px;
+  width: 290px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: #0066cc; /* Blue border on hover */
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.12);
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #0066cc;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #666666;
+}
+
+
+/* ===================================================
+   7. Contact Section
+   =================================================== */
+.contact-section {
+  background-color: #ffffff;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: #111111;
+}
+
+/* GIF-style animated mail icon */
+.contact-animation {
+  margin-bottom: 12px;
+}
+
+.animated-mail {
+  display: inline-block;
+  font-size: 3.2rem;
+  animation: floatMail 2s ease-in-out infinite;
+}
+
+/* Floating bounce animation that loops like a GIF */
+@keyframes floatMail {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.contact-email {
+  margin: 18px 0 25px 0;
+  font-size: 1.1rem;
+  color: #444444;
+}
+
+.contact-email a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+.contact-section .btn {
+  margin-top: 10px;
+}
+
+/* Subtle glowing pulse effect on the button */
+.btn-animated {
+  animation: pulseButton 2s infinite;
+}
+
+@keyframes pulseButton {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 102, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+  }
+}
+
+
+/* ===================================================
+   8. Footer
+   =================================================== */
+.footer {
+  background-color: #f7f9fc;
+  border-top: 1px solid #e5e5e5;
+  padding: 25px 20px;
+  text-align: center;
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+
+/* ===================================================
+   9. Responsive Design (Mobile Friendly)
+   =================================================== */
+@media (max-width: 768px) {
+  /* Stack navbar items vertically on mobile */
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 0.95rem;
+  }
+
+  .home-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    width: 100%; /* Cards take full width on smaller screens */
+    max-width: 360px;
+  }
+}
