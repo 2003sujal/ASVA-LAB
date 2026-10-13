@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASVA Innovation Lab | Pokhara</title>
+  <title>We're Building Our Website - ASVA Innovation Lab</title>
+
+  <!-- Website Favicon -->
   <link rel="icon" type="image/jpeg" href="logo.jpg" />
-  <link rel="stylesheet" href="index.css" />
+
+  <!-- Google Fonts: Montserrat & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <img src="logo.jpg" alt="ASVA Logo" class="logo" />
-        <span class="company-name">ASVA Innovation Lab</span>
+  <!-- Company Logo at the Side (Top-Left) -->
+  <header class="side-logo-container">
+    <a href="#" class="logo-link" title="ASVA Innovation Lab">
+      <img src="logo.jpg" alt="ASVA Innovation Lab Logo" class="logo" />
+    </a>
+  </header>
+
+  <!-- Main Centered Stage -->
+  <main class="container">
+    
+    <!-- Under Construction Label (Text Only) -->
+    <div class="construction-label-wrap">
+      <span class="construction-text">UNDER CONSTRUCTION</span>
+    </div>
+
+    <!-- Main Heading in One Line (Slightly Smaller) -->
+    <h1 class="main-heading">WE'RE BUILDING OUR WEBSITE</h1>
+
+    <!-- Subtitle Message -->
+    <p class="subtitle">
+      Sign up now and be the first to know when it's ready!
+    </p>
+
+    <!-- Email Subscription Form -->
+    <form class="email-form" id="subscribe-form">
+      <div class="form-group">
+        <input 
+          type="email" 
+          id="email-input" 
+          class="email-input" 
+          placeholder="Enter your email..." 
+          required 
+          autocomplete="email"
+        />
+        <button type="submit" class="submit-btn" aria-label="Submit Email" title="Submit">
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+      <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
+    </form>
+
+    <!-- Contact & Social Icon Circle Links -->
+    <div class="social-links">
+      <!-- Direct Gmail Link -->
+      <a 
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="social-btn" 
+        title="Email us at info@asva.com.np"
+        aria-label="Send Email"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
       </a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+   
     </div>
-  </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="section home-section">
-    <div class="container">
-      <!-- GIF-style animated badge with rotating icon -->
-      <span class="badge">
-        <span class="badge-icon">⚙️</span>
-        <span>Website Under Construction</span>
-      </span>
-      <h1>We're Building Something Amazing!</h1>
-      <p class="home-message">
-        Welcome to ASVA Innovation Lab. Our official website is currently under
-        construction as we prepare a modern digital experience for you. Please check back soon!
-      </p>
-      <a href="#contact" class="btn btn-primary">Get In Touch</a>
-    </div>
-  </section>
+    <!-- Copyright Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 ASVA Innovation Lab Pvt. Ltd. All Rights Reserved.</p>
+    </footer>
 
-  <!-- About Section -->
-  <section id="about" class="section about-section">
-    <div class="container">
-      <h2>About Us</h2>
-      <div class="divider"></div>
-      <p class="section-text">
-        ASVA Innovation Lab Pvt. Ltd. is an emerging IT company committed to delivering
-        reliable, cutting-edge technology solutions. We specialize in building modern
-        web applications, custom software, and providing end-to-end IT consulting to
-        help businesses grow in the digital era.
-      </p>
-    </div>
-  </section>
+  </main>
 
-  <!-- Services Section -->
-  <section id="services" class="section services-section">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="divider"></div>
-      <div class="services-grid">
-        <!-- Service Card 1 -->
-        <div class="service-card">
-          <div class="service-icon">🌐</div>
-          <h3>Web Development</h3>
-          <p>Modern, responsive, and fast websites designed to give your brand an impactful online presence.</p>
-        </div>
+  <!-- Client-side script for email interaction -->
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const input = document.getElementById('email-input');
+    const feedback = document.getElementById('form-feedback');
 
-        <!-- Service Card 2 -->
-        <div class="service-card">
-          <div class="service-icon">💻</div>
-          <h3>Software Development</h3>
-          <p>Custom software and web apps engineered to automate tasks and solve real business problems.</p>
-        </div>
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = input.value.trim();
+      if (!email) return;
 
-        <!-- Service Card 3 -->
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <h3>IT Consulting</h3>
-          <p>Professional tech advice and guidance to help you choose the right digital strategies and tools.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      // Show instant confirmation
+      feedback.textContent = `Thank you! We'll notify ${email} once we launch.`;
+      feedback.className = 'form-feedback success';
+      
+      // Offer direct compose link
+      setTimeout(() => {
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np&su=Notification%20Request%20-%20ASVA%20Website&body=Please%20notify%20me%20at%20${encodeURIComponent(email)}%20when%20the%20website%20is%20ready.`;
+        window.open(gmailUrl, '_blank');
+      }, 900);
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <!-- Animated GIF-style Icon (Loops smoothly) -->
-      <div class="contact-animation">
-        <span class="animated-mail">✉️</span>
-      </div>
-
-      <h2>Contact Us</h2>
-      <div class="divider"></div>
-      <p class="section-text">
-        Have questions or want to discuss a project with us while our site is being completed?
-        Feel free to reach out directly via email.
-      </p>
-      <p class="contact-email">
-        <strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np" target="_blank" rel="noopener noreferrer">info@asva.com.np</a>
-      </p>
-      <!-- Direct Gmail compose link that opens Gmail in the browser -->
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-animated">Send Email via Gmail</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2026 ASVA Innovation Lab Pvt. Ltd. All rights reserved.</p>
-  </footer>
+      input.value = '';
+    });
+  </script>
 
 </body>
 </html>
