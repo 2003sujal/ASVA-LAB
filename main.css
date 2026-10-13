@@ -1,6 +1,6 @@
 /* ===================================================
-   ASVA Innovation Lab - We're Building Our Website
-   Side Logo, Clean Spacing, One-Line Heading
+   ASVA Innovation Lab - Something New Is Coming
+   Centered Layout, Responsive & Premium Aesthetics
    =================================================== */
 
 /* 1. Global Reset & Box Sizing */
@@ -10,43 +10,66 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /* 2. Body & Backdrop - Moody Slate Cinematic Canvas */
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #ffffff;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px 40px;
+  padding: 40px 20px;
   position: relative;
   overflow-x: hidden;
-  background-color: #1e2836;
+  background-color: #1a222e;
   background-image: 
-    radial-gradient(circle at 72% 28%, rgba(100, 116, 139, 0.45) 0%, transparent 55%),
-    radial-gradient(circle at 65% 35%, #475569 0%, #334155 42%, #1e293b 78%, #0f172a 100%);
+    radial-gradient(circle at 50% 25%, rgba(100, 116, 139, 0.45) 0%, transparent 60%),
+    radial-gradient(circle at 50% 45%, #475569 0%, #334155 42%, #1e293b 78%, #0f172a 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. Company Logo Positioned at the Side (Top-Left) */
-.side-logo-container {
-  position: absolute;
-  top: 32px;
-  left: 42px;
+/* 3. Main Centered Stage Container */
+.container {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. Company Logo - Centered in Middle */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
   mix-blend-mode: screen;
 }
 
 .logo-link {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
 }
 
 .logo {
-  max-width: 155px;
+  max-width: 180px;
+  width: 100%;
   height: auto;
   display: block;
-  /* Inverts black logo text to pure white; container blends black background away */
+  /* Inverts black logo to pure white, screen blending dissolves black background */
   filter: invert(1);
   opacity: 0.95;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -54,23 +77,12 @@ body {
 
 .logo:hover {
   opacity: 1;
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-/* 4. Main Centered Stage */
-.container {
-  max-width: 740px;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 5. Under Construction Label (Text Only) */
+/* 5. Under Construction Label */
 .construction-label-wrap {
-  margin-bottom: 36px;
+  margin-bottom: 22px;
   display: flex;
   justify-content: center;
 }
@@ -79,231 +91,210 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   color: #fbbf24;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
 }
 
-/* 6. Main Heading - Locked to ONE LINE, A Little Bit Smaller */
+/* 6. Main Heading - Something New Is Coming */
 .main-heading {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(19px, 3.2vw, 26px);
+  font-size: clamp(22px, 5.2vw, 36px);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
-  white-space: nowrap;
   line-height: 1.25;
-  margin-bottom: 22px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 18px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+  word-break: break-word;
+  max-width: 100%;
 }
 
 /* 7. Subtitle Message */
 .subtitle {
-  font-size: 15px;
+  font-size: clamp(14px, 2.2vw, 15.5px);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.74);
   line-height: 1.6;
-  max-width: 500px;
-  margin: 0 auto 44px;
+  max-width: 480px;
+  margin: 0 auto 36px;
   letter-spacing: 0.01em;
+  padding: 0 6px;
 }
 
-/* 8. Email Subscription Form */
-.email-form {
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
-}
-
-.form-group {
+/* 8. Contact & Gmail Section */
+.contact-card-wrap {
+  margin-top: 6px;
+  margin-bottom: 46px;
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contact-pill {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-}
-
-/* Pill-shaped email input field */
-.email-input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 9999px;
-  padding: 13px 24px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 14.5px;
-  color: #ffffff;
-  outline: none;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.email-input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.email-input:focus {
-  border-color: rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-/* Circular Submit Arrow Button */
-.submit-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  flex-shrink: 0;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.submit-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: scale(1.05);
-}
-
-.submit-btn:active {
-  transform: scale(0.96);
-}
-
-.arrow-icon {
-  width: 19px;
-  height: 19px;
-  stroke: #ffffff;
-  transition: transform 0.25s ease;
-}
-
-.submit-btn:hover .arrow-icon {
-  transform: translateX(2px);
-}
-
-/* Form Feedback message */
-.form-feedback {
-  min-height: 24px;
-  margin-top: 14px;
-  font-size: 13.5px;
-  letter-spacing: 0.2px;
-  transition: all 0.3s ease;
-}
-
-.form-feedback.success {
-  color: #86efac;
-}
-
-/* 9. Social & Direct Contact Circle Icons */
-.social-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 48px;
-  margin-bottom: 48px;
-}
-
-.social-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.social-btn svg {
-  width: 17px;
-  height: 17px;
-  stroke: currentColor;
-}
-
-.social-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.75);
   color: #ffffff;
-  transform: translateY(-2px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
-/* 10. Copyright Footer */
+.contact-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fbbf24;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.contact-pill:hover .contact-icon {
+  transform: scale(1.08);
+  background: rgba(251, 191, 36, 0.18);
+}
+
+.contact-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.contact-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  letter-spacing: 0.01em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-prefix {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-email {
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.contact-pill:hover .contact-email {
+  color: #fbbf24;
+  text-decoration-color: #fbbf24;
+}
+
+/* 9. Copyright Footer */
 .footer {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.3px;
+  line-height: 1.5;
+  padding: 0 10px;
 }
 
-/* 11. Responsive Design for Mobile Devices */
+/* 10. Responsive Adjustments */
 @media (max-width: 640px) {
   body {
-    padding: 30px 16px;
-    align-items: flex-start;
-  }
-
-  .side-logo-container {
-    position: static;
-    margin-bottom: 28px;
-    display: flex;
-    justify-content: center;
+    padding: 36px 16px 28px;
   }
 
   .logo {
-    max-width: 130px;
+    max-width: 150px;
+  }
+
+  .logo-container {
+    margin-bottom: 22px;
   }
 
   .construction-label-wrap {
-    margin-bottom: 28px;
-  }
-
-  .main-heading {
-    white-space: normal;
-    font-size: 22px;
     margin-bottom: 18px;
   }
 
+  .construction-text {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
+
+  .main-heading {
+    margin-bottom: 15px;
+  }
+
   .subtitle {
-    font-size: 14px;
-    margin-bottom: 34px;
+    margin-bottom: 26px;
   }
 
-  .email-form {
-    max-width: 100%;
+  .contact-card-wrap {
+    margin-bottom: 36px;
   }
 
-  .form-group {
+  .contact-pill {
+    padding: 11px 20px;
     gap: 10px;
   }
 
-  .email-input {
-    padding: 12px 18px;
-    font-size: 14px;
-  }
-
-  .submit-btn {
-    width: 44px;
-    height: 44px;
-  }
-
-  .social-links {
-    margin-top: 38px;
-    margin-bottom: 38px;
+  .contact-text {
+    font-size: 13.5px;
+    gap: 6px;
   }
 }
+
+/* Very narrow mobile devices (e.g. 360px and smaller) */
+@media (max-width: 380px) {
+  body {
+    padding: 28px 12px 20px;
+  }
+
+  .logo {
+    max-width: 135px;
+  }
+
+  .construction-text {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .main-heading {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .contact-pill {
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+
+  .contact-text {
+    font-size: 12.5px;
+  }
+}
+

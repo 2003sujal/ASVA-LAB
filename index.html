@@ -4,7 +4,7 @@
   <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>We're Building Our Website - ASVA Innovation Lab</title>
+  <title>Something New Is Coming - ASVA Innovation Lab</title>
 
   <!-- Website Favicon -->
   <link rel="icon" type="image/jpeg" href="logo.jpg" />
@@ -19,68 +19,49 @@
 </head>
 <body>
 
-  <!-- Company Logo at the Side (Top-Left) -->
-  <header class="side-logo-container">
-    <a href="#" class="logo-link" title="ASVA Innovation Lab">
-      <img src="logo.jpg" alt="ASVA Innovation Lab Logo" class="logo" />
-    </a>
-  </header>
-
   <!-- Main Centered Stage -->
   <main class="container">
+
+    <!-- Company Logo Centered at Middle -->
+    <header class="logo-container">
+      <a href="#" class="logo-link" title="ASVA Innovation Lab">
+        <img src="logo.jpg" alt="ASVA Innovation Lab Logo" class="logo" />
+      </a>
+    </header>
     
     <!-- Under Construction Label (Text Only) -->
     <div class="construction-label-wrap">
       <span class="construction-text">UNDER CONSTRUCTION</span>
     </div>
 
-    <!-- Main Heading in One Line (Slightly Smaller) -->
-    <h1 class="main-heading">WE'RE BUILDING OUR WEBSITE</h1>
+    <!-- Main Heading -->
+    <h1 class="main-heading">SOMETHING NEW IS COMING</h1>
 
     <!-- Subtitle Message -->
     <p class="subtitle">
-      Sign up now and be the first to know when it's ready!
+      We're crafting something extraordinary. Stay tuned!
     </p>
 
-    <!-- Email Subscription Form -->
-    <form class="email-form" id="subscribe-form">
-      <div class="form-group">
-        <input 
-          type="email" 
-          id="email-input" 
-          class="email-input" 
-          placeholder="Enter your email..." 
-          required 
-          autocomplete="email"
-        />
-        <button type="submit" class="submit-btn" aria-label="Submit Email" title="Submit">
-          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
-      </div>
-      <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
-    </form>
-
-    <!-- Contact & Social Icon Circle Links -->
-    <div class="social-links">
-      <!-- Direct Gmail Link -->
+    <!-- Contact & Gmail Section -->
+    <div class="contact-card-wrap">
       <a 
         href="https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np" 
         target="_blank" 
         rel="noopener noreferrer" 
-        class="social-btn" 
-        title="Email us at info@asva.com.np"
-        aria-label="Send Email"
+        class="contact-pill" 
+        title="Send email via Gmail"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-        </svg>
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+        </span>
+        <span class="contact-text">
+          <span class="contact-prefix">Contact:</span>
+          <span class="contact-email">info@asva.com.np</span>
+        </span>
       </a>
-
-   
     </div>
 
     <!-- Copyright Footer -->
@@ -89,31 +70,6 @@
     </footer>
 
   </main>
-
-  <!-- Client-side script for email interaction -->
-  <script>
-    const form = document.getElementById('subscribe-form');
-    const input = document.getElementById('email-input');
-    const feedback = document.getElementById('form-feedback');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = input.value.trim();
-      if (!email) return;
-
-      // Show instant confirmation
-      feedback.textContent = `Thank you! We'll notify ${email} once we launch.`;
-      feedback.className = 'form-feedback success';
-      
-      // Offer direct compose link
-      setTimeout(() => {
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@asva.com.np&su=Notification%20Request%20-%20ASVA%20Website&body=Please%20notify%20me%20at%20${encodeURIComponent(email)}%20when%20the%20website%20is%20ready.`;
-        window.open(gmailUrl, '_blank');
-      }, 900);
-
-      input.value = '';
-    });
-  </script>
 
 </body>
 </html>
