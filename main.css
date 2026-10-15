@@ -15,10 +15,10 @@ html {
   text-size-adjust: 100%;
 }
 
-/* 2. Body - Solid #FFFFFF Canvas with Vertical Page Flex */
+/* 2. Body - Very subtle light green tint Canvas with Vertical Page Flex */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #FFFFFF;
+  background-color:#c2e2c27c;
   color: #64748B;
   min-height: 100vh;
   min-height: 100dvh;
@@ -40,6 +40,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 50;
 }
 
 .logo-link {
@@ -84,14 +86,33 @@ body {
   border: none;
   color: #0F172A;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 6px;
+  padding: 8px;
+  border-radius: 8px;
   line-height: 0;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: rgba(15, 23, 42, 0.06);
 }
 
 .mobile-menu-btn svg {
   width: 24px;
   height: 24px;
+}
+
+.mobile-menu-btn .icon-close {
+  display: none;
+}
+
+.mobile-menu-btn.is-active .icon-menu {
+  display: none;
+}
+
+.mobile-menu-btn.is-active .icon-close {
+  display: block;
 }
 
 /* 4. Main Centered Hero Stage */
@@ -238,6 +259,38 @@ body {
 
   .site-nav {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+    animation: menuSlideDown 0.18s ease-out;
+  }
+
+  .site-nav a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #475569;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    background-color: #F1F5F9;
+    color: #0F172A;
   }
 
   .mobile-menu-btn {
@@ -293,5 +346,17 @@ body {
 
   .contact-text {
     font-size: 13px;
+  }
+}
+
+/* Animations */
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
