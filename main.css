@@ -1,6 +1,6 @@
 /* ===================================================
-   ASVA Innovation Lab - Something New Is Coming
-   Centered Layout, Responsive & Premium Aesthetics
+   ASVA Innovation Lab - Under Construction
+   Minimal, Clean & Plain Redesign
    =================================================== */
 
 /* 1. Global Reset & Box Sizing */
@@ -15,119 +15,139 @@ html {
   text-size-adjust: 100%;
 }
 
-/* 2. Body & Backdrop - Moody Slate Cinematic Canvas */
+/* 2. Body - Solid #FFFFFF Canvas with Vertical Page Flex */
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #FFFFFF;
+  color: #64748B;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #1a222e;
-  background-image: 
-    radial-gradient(circle at 50% 25%, rgba(100, 116, 139, 0.45) 0%, transparent 60%),
-    radial-gradient(circle at 50% 45%, #475569 0%, #334155 42%, #1e293b 78%, #0f172a 100%);
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. Main Centered Stage Container */
-.container {
-  max-width: 680px;
+/* 3. Header & Navigation */
+.site-header {
   width: 100%;
-  text-align: center;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 32px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.site-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: #0F172A;
+}
+
+/* Hamburger icon for mobile viewports */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #0F172A;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  line-height: 0;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 4. Main Centered Hero Stage */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* 4. Company Logo - Centered in Middle */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 28px;
-  mix-blend-mode: screen;
-}
-
-.logo-link {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo {
-  max-width: 180px;
-  width: 100%;
-  height: auto;
-  display: block;
-  /* Inverts black logo to pure white, screen blending dissolves black background */
-  filter: invert(1);
-  opacity: 0.95;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.logo:hover {
-  opacity: 1;
-  transform: scale(1.04);
+  text-align: center;
+  padding: 40px 0;
 }
 
 /* 5. Under Construction Label */
 .construction-label-wrap {
-  margin-bottom: 22px;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .construction-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
-  text-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+  letter-spacing: 0.2em;
+  color: #64748B;
+  display: inline-block;
 }
 
-/* 6. Main Heading - Something New Is Coming */
+/* 6. Headline */
 .main-heading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(22px, 5.2vw, 36px);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-  line-height: 1.25;
-  margin-bottom: 18px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
-  word-break: break-word;
-  max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  max-width: 800px;
 }
 
-/* 7. Subtitle Message */
+/* 7. Subtext */
 .subtitle {
-  font-size: clamp(14px, 2.2vw, 15.5px);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.74);
-  line-height: 1.6;
-  max-width: 480px;
-  margin: 0 auto 36px;
-  letter-spacing: 0.01em;
-  padding: 0 6px;
+  color: #64748B;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  max-width: 540px;
 }
 
-/* 8. Contact & Gmail Section */
+/* 8. Contact Pill */
 .contact-card-wrap {
-  margin-top: 6px;
-  margin-bottom: 46px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -136,165 +156,142 @@ body {
 .contact-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
   border-radius: 9999px;
+  padding: 10px 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   text-decoration: none;
-  color: #ffffff;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
-  max-width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contact-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.55);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.08);
+  border-color: #CBD5E1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .contact-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fbbf24;
+  color: #F5B301;
+  line-height: 0;
   flex-shrink: 0;
-  transition: transform 0.25s ease, background-color 0.25s ease;
-}
-
-.contact-pill:hover .contact-icon {
-  transform: scale(1.08);
-  background: rgba(251, 191, 36, 0.18);
 }
 
 .contact-icon svg {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
 }
 
 .contact-text {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14.5px;
-  letter-spacing: 0.01em;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #64748B;
+  white-space: nowrap;
 }
 
 .contact-prefix {
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: #64748B;
 }
 
 .contact-email {
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
-  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  font-weight: 500;
+  color: #0F172A;
+  text-decoration: none;
 }
 
 .contact-pill:hover .contact-email {
-  color: #fbbf24;
-  text-decoration-color: #fbbf24;
+  text-decoration: underline;
 }
 
-/* 9. Copyright Footer */
+/* 9. Pinned Footer */
 .footer {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
-  letter-spacing: 0.3px;
-  line-height: 1.5;
-  padding: 0 10px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 0 32px;
+  text-align: center;
 }
 
-/* 10. Responsive Adjustments */
-@media (max-width: 640px) {
+.footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #94A3B8;
+  letter-spacing: 0.01em;
+}
+
+/* 10. Responsive Design (< 768px) */
+@media (max-width: 768px) {
   body {
-    padding: 36px 16px 28px;
+    padding: 0 16px;
   }
 
-  .logo {
-    max-width: 150px;
+  .site-header {
+    padding: 24px 0 16px;
   }
 
-  .logo-container {
-    margin-bottom: 22px;
+  .site-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .container {
+    padding: 32px 0 24px;
   }
 
   .construction-label-wrap {
-    margin-bottom: 18px;
-  }
-
-  .construction-text {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-  }
-
-  .main-heading {
-    margin-bottom: 15px;
-  }
-
-  .subtitle {
-    margin-bottom: 26px;
-  }
-
-  .contact-card-wrap {
-    margin-bottom: 36px;
-  }
-
-  .contact-pill {
-    padding: 11px 20px;
-    gap: 10px;
-  }
-
-  .contact-text {
-    font-size: 13.5px;
-    gap: 6px;
-  }
-}
-
-/* Very narrow mobile devices (e.g. 360px and smaller) */
-@media (max-width: 380px) {
-  body {
-    padding: 28px 12px 20px;
-  }
-
-  .logo {
-    max-width: 135px;
+    margin-bottom: 20px;
   }
 
   .construction-text {
     font-size: 11px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
   }
 
   .main-heading {
-    font-size: 20px;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: 16px;
+    margin-bottom: 32px;
   }
 
   .contact-pill {
-    padding: 10px 14px;
-    border-radius: 16px;
+    padding: 9px 18px;
   }
 
-  .contact-text {
-    font-size: 12.5px;
+  .footer {
+    padding: 20px 0 24px;
+  }
+
+  .footer p {
+    font-size: 12px;
   }
 }
 
+/* Small mobile devices (< 400px) */
+@media (max-width: 400px) {
+  .main-heading {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .contact-text {
+    font-size: 13px;
+  }
+}
